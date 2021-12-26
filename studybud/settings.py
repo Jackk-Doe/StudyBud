@@ -20,7 +20,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-89$1!9lsdgab&(xiey-fpuyg0^vs+k*el*f$z^--*_ru78vmz5'
+from keys import skey
+SECRET_KEY = skey
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -40,6 +41,8 @@ INSTALLED_APPS = [
 
     # Specify a direct file path, to configurate to the app
     'base.apps.BaseConfig',
+
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
