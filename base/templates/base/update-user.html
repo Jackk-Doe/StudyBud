@@ -19,8 +19,12 @@
                 </div>
             </div>
             <div class="layout__body">
-                <form class="form" action="" method="POST">
+
+                {% comment %} Use 'enctype="multipart/form-data"' when need to 
+                submit files within form {% endcomment %}
+                <form class="form" action="" method="POST" enctype="multipart/form-data">
                   {% csrf_token %}
+
                   {% for field in form %}
                   <div class="form__group">
                       <label for="profile_pic">{{field.label}}</label>
